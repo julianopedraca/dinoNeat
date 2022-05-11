@@ -1,4 +1,3 @@
-from socket import if_indextoname
 import pygame
 import os
 import random
@@ -86,7 +85,7 @@ class Obstacle:
     def update(self):
         self.rect.x -= game_speed
         if self.rect.x <= self.rect.width:
-            Obstacle.pop()
+            obstacles.pop()
 
     def draw(self, SCREEN):
         SCREEN.blit(self.image[self.type], self.rect)
@@ -109,7 +108,7 @@ def remove(index):
 
 
 def main():
-    global game_speed, x_pos_bg, y_pos_bg, obstacle, dinosaurs, points
+    global game_speed, x_pos_bg, y_pos_bg, obstacles, dinosaurs, points
     clock = pygame.time.Clock()
     points = 0
 
